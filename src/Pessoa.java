@@ -1,6 +1,6 @@
-import javax.sound.sampled.SourceDataLine;
 
-public class pessoa {
+
+public class Pessoa {
 
     String nome;
     String sobrenome;
@@ -8,7 +8,18 @@ public class pessoa {
     double altura;
     double peso;
     double IMC;
-    data data_nascimento;
+    Data data_nascimento;
+
+    public Pessoa(String nome, String sobrenome, int idade, double altura, double peso, double IMC) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.idade = idade;
+        this.altura = altura;
+        this.peso = peso;
+        this.IMC = IMC;
+
+    }
+
 
     public void setNome(String meuNome) {
         nome = meuNome;
@@ -58,9 +69,10 @@ public class pessoa {
         return IMC;
     }
 
-    public double calculoIMC(double IMC) {
-        double calculo = peso / (Math.pow(altura, altura));
-        return calculo;
+    public void calculoIMC(Pessoa pessoa) {
+
+         IMC = pessoa.getPeso() / (Math.pow(pessoa.getAltura(), pessoa.getAltura()));
+
     }
 
     public static String informaObesidade(double IMC) {
@@ -84,4 +96,16 @@ public class pessoa {
 
     }
 
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                ", idade=" + idade +
+                ", altura=" + altura +
+                ", peso=" + peso +
+                ", IMC=" + IMC +
+                ", data_nascimento=" + data_nascimento +
+                '}';
+    }
 }
