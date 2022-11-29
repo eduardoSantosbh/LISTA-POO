@@ -1,22 +1,11 @@
-import java.util.Scanner;
-
 public class App {
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        pessoa victor = new pessoa();
+    public static void main(String[] args) {
 
-        double peso;
-        System.out.println("Qual seu peso? ");
-        peso = sc.nextDouble();
-        victor.setPeso(peso);
-        victor.getPeso();
+        Pessoa victor = new Pessoa("Victor", "Sansgiorge",20,1.85,80,0);
 
-        double altura;
-        System.out.println("Qual sua altura? ");
-        altura = sc.nextDouble();
-        victor.setAltura(altura);
-        victor.getAltura();
-        sc.close();
+        victor.calculoIMC(victor);
+
+        System.out.println(victor);
 
     }
 
