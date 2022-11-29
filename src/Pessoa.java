@@ -75,24 +75,23 @@ public class Pessoa {
 
     }
 
-    public static String informaObesidade(double IMC) {
-        String retorno = "";
+    public void informaObesidade(Pessoa pessoa) {
 
-        if (IMC < 18.5) {
-            retorno = "Abaixo do peso";
-        } else if (IMC >= 18.5 && IMC < 25) {
-            retorno = "Peso normal";
-        } else if (IMC >= 25 && IMC < 30) {
-            retorno = "Sobrepeso";
-        } else if (IMC >= 30 & IMC < 35) {
-            retorno = "Obesidade grau 1";
-        } else if (IMC >= 35 && IMC < 40) {
-            retorno = "Obesidade grau 2";
+        if (pessoa.getIMC() < 18.5) {
+            System.out.println("Abaixo do peso");
+        } else if (pessoa.getIMC() >= 18.5 && pessoa.getIMC() < 25) {
+            System.out.println("Peso normal");
+        } else if (pessoa.getIMC() >= 25 && pessoa.getIMC() < 30) {
+            System.out.println("Sobrepeso");
+        } else if (pessoa.getIMC() >= 30 && pessoa.getIMC() < 35) {
+            System.out.println("Obesidade grau 1");
+        } else if (pessoa.getIMC() >= 35 && pessoa.getIMC() < 40) {
+            System.out.println("Obesidade grau 2");
         } else {
-            retorno = "Obesidade grau 3";
+            System.out.println("Obesidade grau 3");
         }
 
-        return retorno;
+
 
     }
 
